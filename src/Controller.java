@@ -19,7 +19,7 @@ public class Controller {
     Dice cr = new Dice();
 
 public void handleButtonClick(){
-    System.out.println("this is happening");
+    System.out.println("this is happening!");
     button.setText("Reroll");
     myTA.setText("");
 
