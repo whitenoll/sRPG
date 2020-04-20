@@ -11,7 +11,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Dice cr = new Dice();
-       String wT = String.valueOf(cr.calculateRoll("2d8"));
+       String wT = "sRPG";
+       //String wT = String.valueOf(cr.calculateRoll("2d8"));
 
                 primaryStage.setTitle(wT);
         primaryStage.setScene(new Scene(root, 300, 575));

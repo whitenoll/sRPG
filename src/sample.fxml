@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
+
    <rowConstraints>
+      <RowConstraints maxHeight="54.0" minHeight="30.0" prefHeight="54.0" />
       <RowConstraints maxHeight="54.0" minHeight="30.0" prefHeight="54.0" />
       <RowConstraints maxHeight="54.0" minHeight="30.0" prefHeight="54.0" />
       <RowConstraints maxHeight="54.0" minHeight="30.0" prefHeight="54.0" />
       <RowConstraints maxHeight="195.0" minHeight="171.0" prefHeight="171.0" />
    </rowConstraints>
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+      <Button fx:id="button" mnemonicParsing="false" onAction="#handleButtonClick" text="Roll dice" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
          <center>
-             <TextArea fx:id="myTA" prefHeight="115.0" prefWidth="137.0" text="tesT" BorderPane.alignment="CENTER" />
+             <TextArea fx:id="myTA" prefHeight="115.0" prefWidth="200.0" text="tesT" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
-      <TextField fx:id="textFieldDice" prefHeight="25.0" prefWidth="50.0" text="1d6" GridPane.rowIndex="1" />
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <children>
+            <Label text="Num dice" />
+      
+            <TextField fx:id="textFieldDiceType" prefHeight="25.0" prefWidth="77.0" text="1" />
+            <Label text="Dice sides" />
+            <TextField fx:id="textFieldDice" prefHeight="25.0" prefWidth="51.0" text="6" />
+         </children>
+      </HBox>
 
-      <TextField fx:id="textFieldDiceType" prefHeight="25.0" prefWidth="50.0" text="textFieldDiceType" GridPane.rowIndex="2" />
-      <Button fx:id="button" mnemonicParsing="false" onAction="#handleButtonClick" text="Roll dice" />
 
    </children>
 </GridPane>
