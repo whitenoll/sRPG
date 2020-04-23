@@ -26,5 +26,6 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <mapping class="entity.Room" />
         <mapping class="entity.RoomType" />
+        <mapping class="entity.Item" />
     </session-factory>
 </hibernate-configuration>

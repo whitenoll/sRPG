@@ -3,9 +3,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import util.Dice;
 
-public class Main extends Application {
+public class TableViewTest extends Application {
 
     Stage window;
     Scene scene1, scene2;
@@ -17,7 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("itemTableView.fxml"));
 
         // Dice cr = new Dice();
        //String wT = String.valueOf(cr.calculateRoll("2d8"));
