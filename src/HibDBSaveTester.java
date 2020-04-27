@@ -1,8 +1,8 @@
-import entity.Room;
+import entity.Item;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
-import util.RoomBuild;
+import util.ItemBuild;
 
 import java.util.List;
 
@@ -12,17 +12,17 @@ public class HibDBSaveTester {
 
     public static void main(String[] args) {
         Object transaction = null;
-        RoomBuild rb = new RoomBuild();
+        ItemBuild ib = new ItemBuild();
 
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             Throwable var3 = null;
 
             try {
-                List<Room> rooms = session.createQuery("from Room", Room.class).list();
-                rb.RoomConstruct(rooms, 0);
-                rooms.forEach((s) -> {
-                    System.out.println("NAME:" + s.getName() + " type: " + s.getRoomType().getTypeName() + " " + s.getRoomType().getTypeDescription());
+                List<Item> items = session.createQuery("from Item", Item.class).list();
+                ib.ItemConstruct(items, 0);
+                items.forEach((s) -> {
+                    System.out.println("NAME:" + s.getName() + " type: " + s.getItemType().getTypeName() + " " + s.getItemType().getTypeDescription());
                 });
             } catch (Throwable var13) {
                 var3 = var13;

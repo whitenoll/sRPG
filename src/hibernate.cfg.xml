@@ -27,5 +27,6 @@
         <mapping class="entity.Room" />
         <mapping class="entity.RoomType" />
         <mapping class="entity.Item" />
+        <mapping class="entity.ItemType" />
     </session-factory>
 </hibernate-configuration>

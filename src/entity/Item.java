@@ -1,6 +1,13 @@
 package entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(
@@ -14,7 +21,7 @@ public class Item {
     @Column(
             name = "ID_item"
     )
-    private int roomId;
+    private int itemId;
     @Column(
             name = "name"
     )
@@ -23,8 +30,9 @@ public class Item {
     @JoinColumn(
             name = "typeid"
     )
-    private RoomType roomType;
+    private ItemType itemType;
     @Column(
+            nullable = true,
             name = "width"
     )
     private int width;
@@ -78,16 +86,12 @@ public class Item {
             name = "material"
     )
     private String material;
-    @Column(
-            nullable = true,
-            name = "color"
-    )
-    private String color;
+
     public Item() {
     }
 
-    public Item(int roomId, String name, int width, int Length, int height, int containerId, int locationX, int locationY, String description, int descriptionId, String hitDice, int health, String material, String color) {
-        this.roomId = roomId;
+    public Item(int itemId, String name, int width, int Length, int height, int containerId, int locationX, int locationY, String description, int descriptionId, String hitDice, int health, String material) {
+        this.itemId = itemId;
         this.name = name;
         this.width = width;
         this.Length = Length;
@@ -100,7 +104,6 @@ public class Item {
         this.hitDice = hitDice;
         this.health = health;
         this.material = material;
-        this.color = color;
     }
 
     public int getLength() {
@@ -111,12 +114,10 @@ public class Item {
         this.Length = length;
     }
 
-    public int getRoomId() {
-        return this.roomId;
-    }
+    public int getItemId() { return this.itemId; }
 
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
     public String getName() {
@@ -127,13 +128,11 @@ public class Item {
         this.name = name;
     }
 
-    public RoomType getRoomType() {
-        return this.roomType;
+    public ItemType getItemType() {
+        return this.itemType;
     }
 
-    public void setTypeId(int typeId) {
-        this.roomType = this.roomType;
-    }
+    public void setTypeId(int typeId) { this.itemType = this.itemType; }
 
     public int getWidth() {
         return this.width;
@@ -215,15 +214,7 @@ public class Item {
         this.material = material;
     }
 
-    public String getColor() {
-        return this.color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public String toString() {
-        return "Room{roomId=" + this.roomId + ", name='" + this.name + '\'' + ", typeID='" + this.roomType.getTypeName() + '\'' + ", width=" + this.width + ", height=" + this.height + ", containerId=" + this.containerId + ", locationX=" + this.locationX + ", locationY=" + this.locationY + ", description='" + this.description + '\'' + ", descriptionId=" + this.descriptionId + ", hitDice='" + this.hitDice + '\'' + ", health=" + this.health + ", material='" + this.material + '\'' +  this.color + '\'' +'}';
+        return "Room{roomId=" + this.itemId + ", name='" + this.name + '\'' + ", typeID='" + this.itemType.getTypeName() + '\'' + ", width=" + this.width + ", height=" + this.height + ", containerId=" + this.containerId + ", locationX=" + this.locationX + ", locationY=" + this.locationY + ", description='" + this.description + '\'' + ", descriptionId=" + this.descriptionId + ", hitDice='" + this.hitDice + '\'' + ", health=" + this.health + ", material='" + this.material + '\'' + '}';
     }
 }
