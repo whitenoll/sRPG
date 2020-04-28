@@ -86,11 +86,11 @@ public class Item {
             name = "material"
     )
     private String material;
-
+    private String color;
     public Item() {
     }
 
-    public Item(int itemId, String name, int width, int Length, int height, int containerId, int locationX, int locationY, String description, int descriptionId, String hitDice, int health, String material) {
+    public Item(int itemId, String name, int width, int Length, int height, int containerId, int locationX, int locationY, String description, int descriptionId, String hitDice, int health, String material, String color) {
         this.itemId = itemId;
         this.name = name;
         this.width = width;
@@ -104,6 +104,7 @@ public class Item {
         this.hitDice = hitDice;
         this.health = health;
         this.material = material;
+        this.color = color;
     }
 
     public int getLength() {
@@ -214,7 +215,15 @@ public class Item {
         this.material = material;
     }
 
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public String toString() {
-        return "Room{roomId=" + this.itemId + ", name='" + this.name + '\'' + ", typeID='" + this.itemType.getTypeName() + '\'' + ", width=" + this.width + ", height=" + this.height + ", containerId=" + this.containerId + ", locationX=" + this.locationX + ", locationY=" + this.locationY + ", description='" + this.description + '\'' + ", descriptionId=" + this.descriptionId + ", hitDice='" + this.hitDice + '\'' + ", health=" + this.health + ", material='" + this.material + '\'' + '}';
+        return "Room{roomId=" + this.itemId + ", name='" + this.name + '\'' + ", typeID='" + this.itemType.getTypeName() + '\'' + ", width=" + this.width + ", height=" + this.height + ", containerId=" + this.containerId + ", locationX=" + this.locationX + ", locationY=" + this.locationY + ", description='" + this.description + '\'' + ", descriptionId=" + this.descriptionId + ", hitDice='" + this.hitDice + '\'' + ", health=" + this.health + ", material='" + this.material +  ", color='" + this.color + '\'' + '}';
     }
 }
