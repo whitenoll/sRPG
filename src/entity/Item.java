@@ -30,7 +30,7 @@ public class Item {
     @JoinColumn(
             name = "typeid"
     )
-    private ItemType itemType;
+    public ItemType itemType;
     @Column(
             nullable = true,
             name = "width"

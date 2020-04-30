@@ -34,6 +34,8 @@ public class ItemType {
         this.typeDescription = typeDescription;
     }
 
+
+
     public int getIdType() {
         return this.idType;
     }
@@ -56,5 +58,10 @@ public class ItemType {
 
     public void setTypeDescription(String typeDescription) {
         this.typeDescription = typeDescription;
+    }
+
+    @Override
+    public String toString() {
+        return typeName ;
     }
 }
